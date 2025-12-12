@@ -1,4 +1,4 @@
-<section class="relative flex h-[500px] w-full items-center overflow-hidden">
+<section id="membership" class="relative flex h-[500px] w-full items-center overflow-hidden">
 	<!-- Parallax-like Background -->
 	<div class="absolute inset-0">
 		<img
@@ -21,17 +21,17 @@
 			<h3
 				class="font-serif mb-4 text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500"
 			>
-				NEUPASS
+				MEMBERSHIP
 			</h3>
 			<p class="mb-8 text-sm leading-relaxed text-gray-600">
-				Earn and redeem NeuCoins for exclusive member rates. With our NeuPass membership, you get
-				immediate getaways guaranteed.
+				Join the Shamiana Food Lovers Club. Earn points on every order and redeem them for exclusive
+				dishes and priority reservations at both our locations.
 			</p>
 			<a
 				href="#learn-more"
 				class="inline-block border-b border-gray-800 pb-1 text-xs font-bold uppercase tracking-widest text-gray-800 transition-colors hover:border-[#C5A059] hover:text-[#C5A059]"
 			>
-				Learn More
+				Join Now
 			</a>
 		</div>
 	</div>

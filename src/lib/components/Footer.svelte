@@ -7,7 +7,7 @@
 		<!-- Top Row: Brand & Newsletter -->
 		<div class="mb-16 flex flex-col items-start justify-between gap-10 md:flex-row">
 			<div class="max-w-sm">
-				<div class="font-serif mb-6 text-2xl tracking-widest">IHCL</div>
+				<div class="font-serif mb-6 text-2xl tracking-widest">SHAMIANA</div>
 				<h5 class="mb-4 text-xs font-bold uppercase tracking-widest text-gray-400">
 					Subscribe to our newsletter
 				</h5>
@@ -30,9 +30,9 @@
 				<div>
 					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">About Us</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-[#C5A059]">Our Heritage</li>
-						<li class="cursor-pointer hover:text-[#C5A059]">Management</li>
-						<li class="cursor-pointer hover:text-[#C5A059]">Responsibility</li>
+						<li class="cursor-pointer hover:text-[#C5A059]">Our Story</li>
+						<li class="cursor-pointer hover:text-[#C5A059]">Our Chefs</li>
+						<li class="cursor-pointer hover:text-[#C5A059]">Sourcing</li>
 						<li class="cursor-pointer hover:text-[#C5A059]">Careers</li>
 					</ul>
 				</div>
@@ -71,16 +71,15 @@
 			<div
 				class="flex flex-wrap justify-center gap-6 opacity-50 grayscale transition-all duration-500 hover:grayscale-0"
 			>
-				<!-- Brand Logos Placeholder - Using Text for simplicity but styled like logos -->
-				<span class="font-serif text-lg italic">Taj</span>
-				<span class="font-sans text-lg font-bold tracking-tighter">SELEQTIONS</span>
-				<span class="font-serif text-lg font-bold">VIVANTA</span>
-				<span class="font-mono text-lg">GINGER</span>
-				<span class="font-serif text-lg italic">ama</span>
+				<!-- Payment Methods or Partners -->
+				<span class="font-sans text-xs font-bold tracking-widest">VISA</span>
+				<span class="font-sans text-xs font-bold tracking-widest">MASTERCARD</span>
+				<span class="font-sans text-xs font-bold tracking-widest">AMEX</span>
+				<span class="font-sans text-xs font-bold tracking-widest">UPI</span>
 			</div>
 
 			<div class="text-center text-[10px] uppercase tracking-widest text-gray-600 md:text-right">
-				© 2024 The Indian Hotels Company Limited. All Rights Reserved.
+				© 2024 Shamiana Restaurants. All Rights Reserved.
 			</div>
 		</div>
 	</div>

@@ -8,7 +8,7 @@
 	];
 </script>
 
-<section class="container mx-auto px-6 py-20">
+<section id="gallery" class="container mx-auto px-6 py-20">
 	<div class="mb-12 flex items-center justify-center gap-6">
 		<div class="h-[1px] w-16 bg-gray-300 md:w-24"></div>
 		<h3 class="font-serif text-3xl uppercase tracking-widest text-gray-800">Gallery</h3>

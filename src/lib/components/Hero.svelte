@@ -2,7 +2,7 @@
 	import { Share2 } from '@lucide/svelte';
 </script>
 
-<section class="container relative mx-auto px-6 py-16 md:py-20">
+<section id="overview" class="container relative mx-auto px-6 py-16 md:py-20">
 	<div class="absolute top-10 right-10 hidden text-[#C5A059] lg:block">
 		<div class="rounded-full border border-[#C5A059] p-2">
 			<Share2 size={16} />
