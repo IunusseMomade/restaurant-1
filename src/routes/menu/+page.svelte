@@ -1,5 +1,6 @@
 <script>
-	import ImageViewer from '$lib/components/ImageViewer.svelte';
+	import HeaderSimple from '$lib/components/HeaderSimple.svelte';
+import ImageViewer from '$lib/components/ImageViewer.svelte';
 	import {
 		Clock,
 		MapPin,
@@ -27,6 +28,9 @@
 		{ id: 'steaks', label: 'Signature Steaks' },
 		{ id: 'desserts', label: 'Desserts & Tea' }
 	];
+
+	//menu imports
+	import baklava from '$lib/assets/images/menu/baklava-1.jpeg?enhanced';
 
 	const menuItems = {
 		starters: [
@@ -93,59 +97,14 @@
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </svelte:head>
 
+
+
 <div class="min-h-screen bg-white text-gray-800 font-sans selection:bg-[#C5A059] selection:text-white">
 	
+	
 	<!-- --- 1. HEADER (Consistent) --- -->
-	<header class="flex flex-col w-full border-b border-gray-200 sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all">
-		<!-- Main Nav Bar -->
-		<div class="container mx-auto px-6 py-4 flex justify-between items-center">
-			<div class="flex items-center gap-2">
-				<div class="font-serif text-3xl font-bold tracking-wider text-gray-900">ISTANBUL</div>
-				<div class="h-8 w-[1px] bg-[#C5A059] mx-2"></div>
-				<div class="text-xs uppercase tracking-[0.2em] text-gray-500 leading-tight">
-					Authentic<br/>Turkish<br/>Cuisine
-				</div>
-			</div>
-
-			<div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-				<a href="#" class="hover:text-[#C5A059] transition-colors">HOME</a>
-				<a href="#" class="text-[#C5A059] transition-colors">MENUS</a>
-				<a href="#" class="hover:text-[#C5A059] transition-colors">PRIVATE DINING</a>
-				<a href="#" class="hover:text-[#C5A059] transition-colors">GALLERY</a>
-				
-				<button class="bg-[#C5A059] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#a68545] transition-colors shadow-sm ml-4">
-					Book A Table
-				</button>
-			</div>
-			<button class="md:hidden" onclick={() => isMenuOpen = !isMenuOpen}>
-				{#if isMenuOpen}
-					<X size={24} />
-				{:else}
-					<MenuIcon size={24} />
-				{/if}
-			</button>
-		</div>
-
-		<!-- --- MENU CATEGORY NAV (Sticky Sub-nav) --- -->
-		<div class="w-full bg-[#FAFAFA] border-t border-gray-100 overflow-x-auto scrollbar-hide">
-			<div class="container mx-auto px-6 flex justify-center md:justify-center min-w-max">
-				<div class="flex gap-8 md:gap-12">
-					{#each menuCategories as cat (cat.id)}
-						<button 
-							onclick={() => scrollToSection(cat.id)}
-							class={`py-4 text-xs font-bold uppercase tracking-widest border-b-2 transition-all ${
-								activeCategory === cat.id 
-								? 'text-[#C5A059] border-[#C5A059]' 
-								: 'text-gray-400 border-transparent hover:text-gray-900'
-							}`}
-						>
-							{cat.label}
-						</button>
-					{/each}
-				</div>
-			</div>
-		</div>
-	</header>
+	 <HeaderSimple/>
+	
 
 	<!-- --- 2. HERO SECTION --- -->
 	<section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
@@ -304,8 +263,8 @@
 
 			<div class="flex flex-col md:flex-row gap-12 items-center">
 				<div class="md:w-1/2 w-full">
-					<img 
-						src="https://images.unsplash.com/photo-1599321955726-e04842d6c2e7?auto=format&fit=crop&q=80&w=1000" 
+					<enhanced:img 
+						src={baklava} 
 						alt="Baklava" 
 						class="w-full h-80 object-cover shadow-lg"
 					/>

@@ -2,6 +2,8 @@
 	import { MapPin, Moon } from '@lucide/svelte';
 	import HeaderSimple from '$lib/components/HeaderSimple.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import location_msc from '$lib/assets/images/location-msc.jpeg?enhanced';
+	import location_bm from '$lib/assets/images/section1-1.jpeg?enhanced';
 </script>
 
 <HeaderSimple />
@@ -25,8 +27,8 @@
 			<!-- Location 1 -->
 			<div class="group relative overflow-hidden rounded-xl border border-gray-200">
 				<div class="h-64 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1567449303078-57ad995bd30f?auto=format&fit=crop&q=80&w=1000"
+					<enhanced:img
+						src={location_msc}
 						alt="Maputo Shopping Center"
 						class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
 					/>
@@ -50,8 +52,8 @@
 			<!-- Location 2 -->
 			<div class="group relative overflow-hidden rounded-xl border border-gray-200">
 				<div class="h-64 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1000"
+					<enhanced:img
+						src={location_bm}
 						alt="Baía-Mall"
 						class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
 					/>

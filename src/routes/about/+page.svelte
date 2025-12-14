@@ -10,14 +10,18 @@
     Wine,
     ChefHat
   } from '@lucide/svelte';
-
+  import person_1 from '$lib/assets/images/about/about-section4-1.jpeg?enhanced';
+  import person_2 from '$lib/assets/images/about/about-section4-2.jpeg?enhanced';
+  import ambient_1 from '$lib/assets/images/about/about-section2-1.jpeg?enhanced';
+  import food_1 from '$lib/assets/images/about/about-section2-2.jpeg?enhanced';
+	import HeaderSimple from '$lib/components/HeaderSimple.svelte';
   let isMenuOpen = false;
 </script>
 
 <div class="min-h-screen bg-white text-gray-800 font-sans selection:bg-[#C5A059] selection:text-white">
-  
+  <HeaderSimple/>
   <!-- --- 1. HEADER (Consistent) --- -->
-  <header class="flex flex-col w-full border-b border-gray-200 sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all">
+  <!-- <header class="flex flex-col w-full border-b border-gray-200 sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-2">
         <div class="font-serif text-3xl font-bold tracking-wider text-gray-900">ISTANBUL</div>
@@ -45,7 +49,8 @@
         {/if}
       </button>
     </div>
-  </header>
+  </header> -->
+
 
   <!-- --- 2. HERO SECTION --- -->
   <section class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
@@ -96,24 +101,24 @@
           </p>
         </div>
         <div class="mt-10">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" alt="Signature" class="h-12 opacity-50" />
-          <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Mehmet Yilmaz, Founder</p>
+          <enhanced:img src={person_2}/>
+          <!-- <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Mehmet Yilmaz, Founder</p> -->
         </div>
       </div>
 
       <!-- Image Side - Collage Effect -->
       <div class="order-1 lg:order-2 relative">
         <div class="relative z-10">
-          <img 
-            src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800" 
+          <enhanced:img 
+            src={ambient_1}
             alt="Chef Plating" 
             class="w-full h-auto shadow-2xl"
           />
         </div>
         <!-- Decorative Offset Image -->
         <div class="absolute -bottom-12 -left-12 w-2/3 z-20 hidden md:block">
-           <img 
-             src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=600" 
+           <enhanced:img 
+             src={food_1}
              alt="Steak Detail" 
              class="w-full h-auto shadow-xl border-8 border-white" 
            />
@@ -189,14 +194,12 @@
       <div class="flex flex-col md:flex-row items-center gap-16">
          <div class="md:w-1/2">
            <div class="relative">
-             <img 
-               src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&q=80&w=800" 
+             <enhanced:img 
+               src={person_1}
                alt="Head Chef" 
-               class="w-full h-[500px] object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+               class="w-full h-[500px] object-cover "
              />
-             <div class="absolute bottom-6 left-6 bg-white text-black py-2 px-4">
-                <span class="font-serif text-lg font-bold">Chef Ismail Demir</span>
-             </div>
+            
            </div>
          </div>
          
@@ -210,7 +213,7 @@
               Chef Ismail brings a unique perspective to Istanbul Restaurant. Having trained in both Istanbul's historic kitchens and Paris's Michelin-starred establishments, he creates dishes that respect tradition while embracing modern refinement.
             </p>
             <button class="border border-white text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#C5A059] hover:border-[#C5A059] transition-all">
-              View His Menu
+              View Menu
             </button>
          </div>
       </div>

@@ -1,13 +1,16 @@
-<section id="membership" class="relative flex h-[500px] w-full items-center overflow-hidden">
+<script>
+	import section6_1 from '$lib/assets/images/section6-1.jpeg?enhanced';
+</script>
+<section id="membership" class="relative flex h-125 w-full items-center overflow-hidden">
 	<!-- Parallax-like Background -->
 	<div class="absolute inset-0">
-		<img
-			src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&q=80&w=2000"
+		<enhanced:img
+			src={section6_1}
 			alt="Palace Background"
 			class="h-full w-full object-cover"
 		/>
 		<!-- Gradient Overlay -->
-		<div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+		<div class="absolute inset-0 bg-linear-to-r from-black/50 to-transparent"></div>
 	</div>
 
 	<!-- Floating Content Card -->
@@ -21,17 +24,19 @@
 			<h3
 				class="font-serif mb-4 text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-secondary to-brand-cyan"
 			>
-				MEMBERSHIP
+				Presente Especial
 			</h3>
+
+			<!-- Fazer design disso -->
 			<p class="mb-8 text-sm leading-relaxed text-gray-600">
-				Join the Shamiana Food Lovers Club. Earn points on every order and redeem them for exclusive
-				dishes and priority reservations at both our locations.
+				Desconto de 20% em todos produtos entre 12:00 e 15:00 de segunda a sexta
+				No Maputo shopping center e no Baia-Mall
 			</p>
 			<a
-				href="#learn-more"
+				href="/menu"
 				class="inline-block border-b border-gray-800 pb-1 text-overline text-gray-800 transition-colors hover:border-primary hover:text-primary"
 			>
-				Join Now
+				Ver Menu
 			</a>
 		</div>
 	</div>

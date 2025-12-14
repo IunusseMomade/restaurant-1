@@ -1,7 +1,9 @@
 <script>
 	import { Menu, X } from '@lucide/svelte';
-
+	import section1_1 from '$lib/assets/images/section1-1.jpeg?enhanced';
 	let isMenuOpen = $state(false);
+	// make the transparent gray image overlay work
+	import overlayImage from '$lib/assets/images/transparent.png';
 </script>
 
 <header class="flex w-full flex-col border-b border-gray-200">
@@ -67,11 +69,25 @@
 	<!-- Hero Section -->
 	<div class="relative h-[500px] w-full">
 		<div class="absolute inset-0">
-			<img
+			<!-- <img
 				src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1920"
 				alt="Luxury Dining"
 				class="h-full w-full object-cover"
+			/> -->
+			<enhanced:img
+				src={section1_1}
+				alt="Luxury Dining"
+				class="h-full w-full object-cover"
 			/>
+			 <!-- Transparent overlay image (on top of the main image) -->
+			<!-- <div class="absolute inset-0 pointer-events-none">
+			<img
+				src={overlayImage}
+				alt=""
+				class="w-full h-full object-cover"
+				aria-hidden="true"
+			/>
+			</div> -->
 			<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 		</div>
 		<div class="relative container mx-auto flex h-full items-center px-6">

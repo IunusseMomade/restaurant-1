@@ -1,5 +1,6 @@
 <script>
 	import { Share2 } from '@lucide/svelte';
+	      import section2_1 from '$lib/assets/images/section2-1.jpeg?enhanced';
 </script>
 
 <section id="overview" class="container relative mx-auto px-6 py-16 md:py-20">
@@ -26,11 +27,17 @@
 	<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
 		<!-- Left: Image -->
 		<div class="group relative overflow-hidden">
-			<img
+			<!-- <img
 				src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=1200"
 				alt="Signature Pasta Dish"
 				class="h-[400px] w-full transform object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+			/> -->
+			<enhanced:img
+				src={section2_1}
+				alt="signature image"
+				class="h-100 w-full object-cover"
 			/>
+			 
 		</div>
 
 		<!-- Right: Text Content -->
