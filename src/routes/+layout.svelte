@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
+	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
@@ -10,4 +11,6 @@
 
 <LanguageSwitcher />
 
-{@render children()}
+{#key page.url.pathname}
+	{@render children()}
+{/key}

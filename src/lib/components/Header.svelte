@@ -2,6 +2,7 @@
 	import { Menu, X } from '@lucide/svelte';
 	import section1_1 from '$lib/assets/images/section1-1.jpeg?enhanced';
 	import * as m from '$lib/paraglide/messages';
+	import { localizeHref } from '$lib/paraglide/runtime';
 	let isMenuOpen = $state(false);
 	// make the transparent gray image overlay work
 	import overlayImage from '$lib/assets/images/transparent.png';
@@ -21,10 +22,10 @@
 
 		<!-- Desktop Nav Actions -->
 		<div class="hidden items-center gap-8 text-sm font-medium tracking-wide md:flex">
-			<a href="/locations" class="link-hover">{m.nav_locations()}</a>
-			<a href="/menu" class="link-hover">{m.nav_menu()}</a>
-			<a href="/about" class="link-hover">{m.nav_story()}</a>
-			<a href="/contact" class="link-hover">{m.nav_contact()}</a>
+			<a href={localizeHref('/locations')} class="link-hover">{m.nav_locations()}</a>
+			<a href={localizeHref('/menu')} class="link-hover">{m.nav_menu()}</a>
+			<a href={localizeHref('/about')} class="link-hover">{m.nav_story()}</a>
+			<a href={localizeHref('/contact')} class="link-hover">{m.nav_contact()}</a>
 
 			<div class="ml-4 flex items-center gap-4">
 				<button
@@ -49,10 +50,10 @@
 	{#if isMenuOpen}
 		<div class="border-t border-gray-100 bg-white px-6 py-6 md:hidden">
 			<nav class="flex flex-col gap-6 text-sm font-medium tracking-wide">
-				<a href="/locations" class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_locations()}</a>
-				<a href="/menu" class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_menu()}</a>
-				<a href="/about" class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_story()}</a>
-				<a href="/contact" class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_contact()}</a>
+				<a href={localizeHref('/locations')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_locations()}</a>
+				<a href={localizeHref('/menu')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_menu()}</a>
+				<a href={localizeHref('/about')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_story()}</a>
+				<a href={localizeHref('/contact')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_contact()}</a>
 				<div class="h-[1px] w-full bg-gray-100"></div>
 				<div class="flex flex-col gap-4">
 					<button class="btn-primary w-full text-center shadow-sm"> {m.nav_order()} </button>

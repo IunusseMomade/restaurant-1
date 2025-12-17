@@ -6,7 +6,7 @@
 	import InfoBar from '$lib/components/InfoBar.svelte';
 	import PromoBanner from '$lib/components/PromoBanner.svelte';
 	import RelatedVenues from '$lib/components/RelatedVenues.svelte';
-
+ 
 
     // import Design_1 from '$lib/Design-1.svelte';
 </script>
@@ -16,6 +16,8 @@
  
 <Header/>
 <Hero/>
+
+
 <InfoBar/>
 <Gallery/>
 <RelatedVenues/>

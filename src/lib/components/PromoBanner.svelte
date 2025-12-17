@@ -1,5 +1,6 @@
 <script>
 	import section6_1 from '$lib/assets/images/section6-1.jpeg?enhanced';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 <section id="membership" class="relative flex h-125 w-full items-center overflow-hidden">
 	<!-- Parallax-like Background -->
@@ -33,7 +34,7 @@
 				No Maputo shopping center e no Baia-Mall
 			</p>
 			<a
-				href="/menu"
+				href={localizeHref('/menu')}
 				class="inline-block border-b border-gray-800 pb-1 text-overline text-gray-800 transition-colors hover:border-primary hover:text-primary"
 			>
 				Ver Menu
