@@ -1,5 +1,6 @@
 <script>
 	import { Instagram, Facebook, Twitter } from '@lucide/svelte';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
 <footer class="border-t-[3px] border-primary bg-[#0a0a0a] pt-20 pb-8 text-white">
@@ -9,16 +10,16 @@
 			<div class="max-w-sm">
 				<div class="font-serif mb-6 text-2xl tracking-widest">SHAMIANA</div>
 				<h5 class="mb-4 text-overline text-gray-400">
-					Subscribe to our newsletter
+					{m.footer_subscribe_title()}
 				</h5>
 				<div class="flex border-b border-gray-700 pb-2">
 					<input
 						type="email"
-						placeholder="Enter your email address"
+						placeholder={m.footer_email_placeholder()}
 						class="w-full border-none bg-transparent text-sm text-white placeholder-gray-600 outline-none"
 					/>
 					<button class="text-overline text-primary"
-						>Subscribe</button
+						>{m.footer_subscribe_btn()}</button
 					>
 				</div>
 			</div>
@@ -28,33 +29,33 @@
 				class="grid grid-cols-2 gap-x-12 gap-y-8 text-xs font-light leading-loose text-gray-400 md:grid-cols-4"
 			>
 				<div>
-					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">About Us</h6>
+					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_about()}</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-primary">Our Story</li>
-						<li class="cursor-pointer hover:text-primary">Our Chefs</li>
-						<li class="cursor-pointer hover:text-primary">Sourcing</li>
-						<li class="cursor-pointer hover:text-primary">Careers</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_story()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_chefs()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_sourcing()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_careers()}</li>
 					</ul>
 				</div>
 				<div>
-					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">Support</h6>
+					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_support()}</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-primary">Contact Us</li>
-						<li class="cursor-pointer hover:text-primary">FAQs</li>
-						<li class="cursor-pointer hover:text-primary">Sitemap</li>
-						<li class="cursor-pointer hover:text-primary">Gift Card</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_contact()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_faqs()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_sitemap()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_gift()}</li>
 					</ul>
 				</div>
 				<div>
-					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">Legal</h6>
+					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_legal()}</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-primary">Terms of Service</li>
-						<li class="cursor-pointer hover:text-primary">Privacy Policy</li>
-						<li class="cursor-pointer hover:text-primary">Web Accessibility</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_terms()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_privacy()}</li>
+						<li class="cursor-pointer hover:text-primary">{m.footer_link_accessibility()}</li>
 					</ul>
 				</div>
 				<div>
-					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">Social</h6>
+					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_social()}</h6>
 					<div class="mt-2 flex gap-4">
 						<Instagram size={18} class="cursor-pointer hover:text-brand-cyan" />
 						<Facebook size={18} class="cursor-pointer hover:text-brand-cyan" />
@@ -79,7 +80,7 @@
 			</div>
 
 			<div class="text-center text-[10px] uppercase tracking-widest text-gray-600 md:text-right">
-				© 2024 Shamiana Restaurants. All Rights Reserved.
+				{m.footer_copyright()}
 			</div>
 		</div>
 	</div>
