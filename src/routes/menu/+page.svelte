@@ -21,7 +21,46 @@
 
 	let isMenuOpen = $state(false);
 	let activeCategory = $state('starters');
-	let selectedImages = $state(null);
+	let viewerImages = $state(null);
+	let viewerStartIndex = $state(0);
+	let isUserClicking = $state(false); // Prevent observer from overriding manual clicks
+	/** @type {HTMLDivElement | null} */
+	let categoryNavScroller = null;
+
+	/** @param {WheelEvent} e */
+	function onCategoryNavWheel(e) {
+		if (!categoryNavScroller) return;
+		// Treat vertical wheel as horizontal scroll for the category nav.
+		if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+			categoryNavScroller.scrollLeft += e.deltaY;
+		}
+	}
+
+	/** @param {any} item */
+	function imagesFromMenuItem(item) {
+		const images = Array.isArray(item?.images) ? item.images.filter(Boolean) : [];
+		if (images.length) return images;
+		return item?.image ? [item.image] : [];
+	}
+
+	/** @param {string} categoryId */
+	function menuItemsFor(categoryId) {
+		return (/** @type {any} */ (menuItems))?.[categoryId] ?? [];
+	}
+
+	/** @param {string} categoryId */
+	function imagesForCategory(categoryId) {
+		return menuItemsFor(categoryId).flatMap(imagesFromMenuItem);
+	}
+
+	/** @param {string} categoryId @param {any} item */
+	function openMenuImageViewer(categoryId, item) {
+		const all = imagesForCategory(categoryId);
+		const clicked = imagesFromMenuItem(item)[0];
+		const nextImages = all.length ? all : clicked ? [clicked] : [];
+		viewerImages = nextImages;
+		viewerStartIndex = clicked ? Math.max(0, nextImages.indexOf(clicked)) : 0;
+	}
 
 	// --- Menu Data Structure ---
 	let menuCategories = $derived([
@@ -345,28 +384,34 @@
 
 	const scrollToSection = (id) => {
 		activeCategory = id;
+		isUserClicking = true;
 		const element = document.getElementById(id);
 		if (element) {
-			// Offset for the sticky header
-			const y = element.getBoundingClientRect().top + window.scrollY - 100;
+			const y = element.getBoundingClientRect().top + window.scrollY - 80;
 			window.scrollTo({ top: y, behavior: 'smooth' });
 		}
+		// Reset flag after scroll completes
+		setTimeout(() => {
+			isUserClicking = false;
+		}, 1000);
 	};
 
 	onMount(() => {
 		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					activeCategory = entry.target.id;
-					// Scroll the nav item into view horizontally
-					const navItem = document.getElementById(`nav-${entry.target.id}`);
-					if (navItem) {
-						navItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+			// Only update if user isn't manually clicking
+			if (!isUserClicking) {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						activeCategory = entry.target.id;
+						const navItem = document.getElementById(`nav-${entry.target.id}`);
+						if (navItem) {
+							navItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+						}
 					}
-				}
-			});
+				});
+			}
 		}, {
-			rootMargin: '-20% 0px -60% 0px', // Trigger when section is near the top
+			rootMargin: '-20% 0px -60% 0px',
 			threshold: 0
 		});
 
@@ -406,24 +451,29 @@
 			</p>
 		</div>
 	</section>
-
-	<!-- --- CATEGORY NAVIGATION --- -->
-	<div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
-		<div class="container mx-auto">
-			<div class="flex overflow-x-auto py-4 px-6 gap-8 scrollbar-hide">
-				{#each menuCategories as category}
-					<button 
-						id="nav-{category.id}"
-						onclick={() => scrollToSection(category.id)}
-						class="whitespace-nowrap text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 border-b-2 pb-1 px-1
-						{activeCategory === category.id ? 'text-[#C5A059] border-[#C5A059]' : 'text-gray-400 border-transparent hover:text-gray-800'}"
-					>
-						{category.label}
-					</button>
-				{/each}
-			</div>
-		</div>
-	</div>
+<div class="sticky top-0 z-40 bg-white border-b border-gray-100 transition-all duration-300">
+    <div
+        class="w-full overflow-x-auto scrollbar-hide"
+        bind:this={categoryNavScroller}
+        onwheel={onCategoryNavWheel}
+    >
+        <div class="flex flex-nowrap w-max px-6 py-3 gap-6">
+            {#each menuCategories as category}
+                <button
+                    id="nav-{category.id}"
+                    type="button"
+                    onclick={() => scrollToSection(category.id)}
+                    class="shrink-0 whitespace-nowrap px-0 py-2 text-xs font-medium tracking-wider uppercase transition-all duration-200 relative border-b-2
+                    {activeCategory === category.id
+                        ? 'border-[#C5A059] text-[#C5A059]'
+                        : 'border-transparent text-gray-400 hover:text-gray-700'}"
+                >
+                    {category.label}
+                </button>
+            {/each}
+        </div>
+    </div>
+</div>
 
 	<!-- --- 3. MENU CONTENT --- -->
 	<div class="container mx-auto px-6 py-20 max-w-5xl">
@@ -449,7 +499,7 @@
 										{#if item.image}
 											<button 
 												type="button"
-												onclick={() => selectedImages = item.images || [item.image]} 
+												onclick={() => openMenuImageViewer(category.id, item)} 
 												class="shrink-0 bg-transparent border-none p-0 cursor-pointer" 
 												aria-label="View full image"
 											>
@@ -489,7 +539,7 @@
 									{#if item.image}
 										<button 
 											type="button"
-											onclick={() => selectedImages = item.images || [item.image]} 
+												onclick={() => openMenuImageViewer(category.id, item)} 
 											class="shrink-0 bg-transparent border-none p-0 cursor-pointer" 
 											aria-label="View full image"
 										>
@@ -582,8 +632,8 @@
 </div>
 
 <!-- --- IMAGE MODAL (Moved outside main div) --- -->
-{#if selectedImages}
-	<ImageViewer images={selectedImages} onClose={() => selectedImages = null} />
+{#if viewerImages}
+	<ImageViewer images={viewerImages} initialIndex={viewerStartIndex} onClose={() => (viewerImages = null)} />
 {/if}
 
 <style>

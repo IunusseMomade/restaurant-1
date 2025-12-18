@@ -13,10 +13,10 @@
 	<div class="container mx-auto flex items-center justify-between px-6 py-4">
 		<!-- Brand Logo Placeholder -->
 		<div class="flex items-center gap-2">
-			<div class="font-serif text-3xl font-bold tracking-wider">SHAMIANA</div>
+			<div class="font-serif text-3xl font-bold tracking-wider">ISTANBUL</div>
 			<div class="mx-2 h-8 w-[1px] bg-gray-300"></div>
 			<div class="text-xs leading-tight uppercase tracking-[0.2em] text-gray-500">
-				{@html m.brand_est()}
+				{m.brand_tagline()}
 			</div>
 		</div>
 
@@ -86,22 +86,25 @@
 			</div> -->
 			<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 		</div>
+
 		<div class="relative container mx-auto flex h-full items-center px-6">
 			<div class="max-w-xl text-white">
-				<h5 class="mb-4 text-overline text-primary">
-					{m.hero_welcome()}
-				</h5>
+				<h5 class="mb-4 text-overline text-primary">{m.hero_welcome()}</h5>
+
 				<h1 class="font-serif mb-6 text-5xl leading-tight md:text-6xl">
-					{@html m.hero_headline()}
+					{@html m.home_header_h1_html()}
 				</h1>
+
 				<p class="mb-8 text-sm font-light leading-relaxed text-gray-200 md:text-base">
-					{m.hero_subtext()}
+					{@html m.home_header_desc_html()}
 				</p>
-				<button
-					class="border border-primary bg-transparent px-8 py-3 text-overline text-white transition-all hover:bg-primary hover:text-white"
+
+				<a
+					href={localizeHref('/menu')}
+					class="inline-block border border-primary bg-transparent px-8 py-3 text-overline text-white transition-all hover:bg-primary hover:text-white"
 				>
 					{m.btn_view_menu()}
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>

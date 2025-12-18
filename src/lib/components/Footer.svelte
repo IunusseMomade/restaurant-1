@@ -5,10 +5,12 @@
 
 <footer class="border-t-[3px] border-primary bg-[#0a0a0a] pt-20 pb-8 text-white">
 	<div class="container mx-auto px-6">
-		<!-- Top Row: Brand & Newsletter -->
 		<div class="mb-16 flex flex-col items-start justify-between gap-10 md:flex-row">
 			<div class="max-w-sm">
-				<div class="font-serif mb-6 text-2xl tracking-widest">SHAMIANA</div>
+				<div class="font-serif mb-2 text-2xl tracking-widest">ISTANBUL RESTAURANT</div>
+				<div class="mb-6 text-[10px] uppercase tracking-widest text-gray-400">
+					{m.footer_locations_line()}
+				</div>
 				<h5 class="mb-4 text-overline text-gray-400">
 					{m.footer_subscribe_title()}
 				</h5>

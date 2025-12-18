@@ -1,6 +1,7 @@
 <script>
 	import { Share2 } from '@lucide/svelte';
 	      import section2_1 from '$lib/assets/images/section2-1.jpeg?enhanced';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
 <section id="overview" class="container relative mx-auto px-6 py-16 md:py-20">
@@ -14,12 +15,10 @@
 	<div class="mx-auto mb-16 max-w-3xl text-center">
 		<div class="mx-auto mb-6 h-[1px] w-16 bg-primary"></div>
 		<h1 class="font-serif mb-6 text-4xl leading-tight text-gray-900 md:text-6xl">
-			MUMBAI'S FIRST <br />
-			<span class="italic">COFFEE SHOP</span>
+			{@html m.home_overview_title_html()}
 		</h1>
 		<p class="mx-auto max-w-2xl text-sm font-light leading-relaxed text-gray-500 md:text-base">
-			Founded in 1973 as a coffee shop, Shamiana offers an all-day dining experience with an
-			international à la carte menu, breakfast buffet, and Mumbai's most delicious weekend brunch.
+			{@html m.home_overview_desc_html()}
 		</p>
 	</div>
 
@@ -44,26 +43,25 @@
 		<div class="flex h-full flex-col justify-center">
 			<h2 class="font-serif relative mb-6 text-3xl text-gray-800 md:text-4xl">
 				<span class="mr-3 text-primary">—</span>
-				EFFORTLESS <br /> ICONIC ALL-DAY <br /> DINING
+				{@html m.home_overview_h2_html()}
 			</h2>
+
 			<p class="mb-6 text-sm font-light leading-7 text-gray-500">
-				Step into Shamiana, where illustrious history meets modern comfort. From the legendary
-				Shamiana Burger to our authentic local delicacies, every dish tells a story of Mumbai's
-				culinary heritage combined with world-class hospitality.
+				{m.home_overview_p()}
 			</p>
 
 			<div class="space-y-2">
 				<div class="flex items-center gap-2 text-sm text-gray-600">
 					<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-					<span>Signature Weekend Brunch</span>
+					<span>{m.home_overview_bullet_1()}</span>
 				</div>
 				<div class="flex items-center gap-2 text-sm text-gray-600">
 					<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-					<span>Live Music Evenings</span>
+					<span>{m.home_overview_bullet_2()}</span>
 				</div>
 				<div class="flex items-center gap-2 text-sm text-gray-600">
 					<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-					<span>Al Fresco Seating Available</span>
+					<span>{m.home_overview_bullet_3()}</span>
 				</div>
 			</div>
 		</div>

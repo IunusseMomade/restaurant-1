@@ -1,19 +1,34 @@
 <script>
 	import { X, ChevronLeft, ChevronRight } from '@lucide/svelte';
 	
-	let { images = [], onClose } = $props();
+	let { images = [], onClose, initialIndex = 0 } = $props();
 	let currentIndex = $state(0);
 
+	$effect(() => {
+		const maxIndex = (images?.length ?? 0) - 1;
+		if (maxIndex < 0) {
+			currentIndex = 0;
+			return;
+		}
+		const nextIndex = Math.min(Math.max(Number(initialIndex) || 0, 0), maxIndex);
+		currentIndex = nextIndex;
+	});
+
+	/** @param {any=} e */
 	function next(e) {
 		e?.stopPropagation();
+		if (!images?.length) return;
 		currentIndex = (currentIndex + 1) % images.length;
 	}
 
+	/** @param {any=} e */
 	function prev(e) {
 		e?.stopPropagation();
+		if (!images?.length) return;
 		currentIndex = (currentIndex - 1 + images.length) % images.length;
 	}
 
+	/** @param {KeyboardEvent} e */
 	function handleKeydown(e) {
 		if (e.key === 'ArrowRight') next();
 		if (e.key === 'ArrowLeft') prev();
@@ -29,6 +44,7 @@
 	class="image-viewer-overlay"
 	onclick={onClose}
 	role="dialog"
+	tabindex="-1"
 	aria-modal="true"
 >
 	<button 

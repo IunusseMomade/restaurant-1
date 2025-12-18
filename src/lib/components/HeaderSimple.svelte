@@ -12,10 +12,10 @@
 		<!-- Brand Logo Placeholder -->
 		<div class="flex items-center gap-2">
 			<a href={localizeHref('/')} class="flex items-center gap-2 text-inherit no-underline">
-				<div class="font-serif text-3xl font-bold tracking-wider">SHAMIANA</div>
+				<div class="font-serif text-3xl font-bold tracking-wider">ISTANBUL</div>
 				<div class="mx-2 h-8 w-[1px] bg-gray-300"></div>
 				<div class="text-xs leading-tight uppercase tracking-[0.2em] text-gray-500">
-					{@html m.brand_est()}
+					{m.brand_tagline()}
 				</div>
 			</a>
 		</div>
