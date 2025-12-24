@@ -550,7 +550,6 @@
 	"brand_est": "Kur.<br />Maputo<br />MZ",
 	"hero_welcome": "Istanbul Restaurant'a Hoşgeldiniz",
 	"footer_copyright": "© 2024 Istanbul Restaurant. Tüm Hakları Saklıdır.",
-
 	"about_seo_title": "Hakkımızda | Istanbul Restaurant Maputo — Türk & Akdeniz Mutfağı",
 	"about_seo_description": "Maputo’daki Istanbul Restaurant’ı tanıyın: Türk ve Akdeniz mutfağı, sıcak atmosfer ve özenli servis. Menüyü inceleyin ve ziyaretinizi planlayın.",
 	"about_hero_h1": "Istanbul Restaurant Hakkında",
@@ -581,12 +580,10 @@
 	"about_cta_title": "Maputo’da bizi ziyaret edin",
 	"about_cta_desc": "Öğle, akşam ve buluşmalar için ideal. Menüyü inceleyin ve Istanbul Restaurant ziyaretinizi planlayın.",
 	"about_cta_btn": "İletişim / Rezervasyon",
-
 	"locations_title": "Konumlarımız",
 	"locations_intro": "Maputo’daki iki merkezi konumumuzda Istanbul Restaurant’ı ziyaret edin.",
 	"locations_badge_halal": "Helal Sertifikalı",
 	"locations_get_directions": "Yol tarifi al",
-
 	"contact_title": "İletişim",
 	"contact_intro": "Sorunuz mu var veya rezervasyon mu yapmak istiyorsunuz? Doğrudan bize ulaşın ya da sosyal medyada bizi takip edin.",
 	"contact_get_in_touch": "Bize ulaşın",
@@ -611,7 +608,6 @@
 	"contact_subject_event": "Özel etkinlik",
 	"contact_subject_feedback": "Geri bildirim",
 	"contact_btn_send": "Mesaj gönder",
-
 	"home_seo_title": "Istanbul Restaurant Maputo | Maputo Shopping Center & Baía-Mall’da Türk Restoranı",
 	"home_seo_description": "Maputo’daki Istanbul Restaurant: Türk ve Akdeniz lezzetleri, şık atmosfer ve özenli servis. Maputo Shopping Center ve Baía-Mall’da bizi ziyaret edin.",
 	"home_header_h1_html": "Maputo’da <span class=\"italic\">Türk Restoranı</span>",
@@ -623,14 +619,12 @@
 	"home_overview_bullet_1": "Aile dostu ve rahat atmosfer",
 	"home_overview_bullet_2": "Türk ve Akdeniz seçenekleri",
 	"home_overview_bullet_3": "İki konum: Maputo Shopping Center & Baía-Mall",
-
 	"gallery_title": "Galeri",
 	"gallery_alt_1": "Galeri 1",
 	"gallery_alt_2": "Galeri 2",
 	"gallery_alt_3": "Galeri 3",
 	"gallery_alt_4": "Galeri 4",
 	"gallery_alt_5": "Galeri 5",
-
 	"home_specials_label": "Şefin Önerileri",
 	"home_specials_title_html": "EVİN <br /> SPESİYALLERİ",
 	"home_specials_desc": "Maputo’daki Istanbul Restaurant favorilerini keşfedin — paylaşmak, kutlamak ve tekrar gelmek için Türk ve Akdeniz lezzetleri.",
@@ -638,17 +632,18 @@
 	"home_specials_item_1_desc": "Baharatlı ızgara kebap; ekmek ve taze salata ile servis edilir.",
 	"home_specials_item_1_category": "Izgaralar",
 	"home_specials_item_1_price": "750 MZN’den itibaren",
-	"home_specials_item_2_name": "MEZZE (SEÇKİ)",
-	"home_specials_item_2_desc": "Paylaşmak için geleneksel başlangıçlardan bir seçki.",
-	"home_specials_item_2_category": "Başlangıçlar",
-	"home_specials_item_2_price": "490 MZN’den itibaren",
-	"home_specials_item_3_name": "BAKLAVA",
-	"home_specials_item_3_desc": "Kuruyemiş ve ballı kat kat hamur işi—yemeğe mükemmel bir final.",
-	"home_specials_item_3_category": "Tatlılar",
-	"home_specials_item_3_price": "220 MZN’den itibaren",
+
+	"home_specials_item_2_name": "BEYTİ SARMA",
+	"home_specials_item_2_desc": "Lavaşa sarılı kıymalı kebap; yoğurt ve sos ile servis edilir.",
+	"home_specials_item_2_category": "Özel",
+	"home_specials_item_2_price": "1500 MZN’den itibaren",
+
+	"home_specials_item_3_name": "KAŞARLI KÖFTE",
+	"home_specials_item_3_desc": "İçi mozzarella peynirli ızgara köfte.",
+	"home_specials_item_3_category": "Izgaralar",
+	"home_specials_item_3_price": "1200 MZN’den itibaren",
 	"home_specials_btn_order": "Şimdi sipariş ver",
 	"home_specials_btn_details": "Detayları gör +",
-
 	"promo_badge": "Teklif",
 	"promo_tag_city": "Maputo",
 	"promo_tag_discount": "20% OFF",
@@ -656,7 +651,6 @@
 	"promo_title": "Özel Teklif • Maputo",
 	"promo_desc_html": "12:00–15:00 saatleri arasında seçili ürünlerde %20 indirim (Pzt–Cum). <strong>Maputo Shopping Center</strong> ve <strong>Baía-Mall</strong>’da geçerlidir.",
 	"promo_btn_menu": "Menüyü Gör",
-
 	"info_hours_label": "Saatler",
 	"info_hours_value": "Her gün 07:00 - 23:00",
 	"info_hours_sub": "Öğle & Akşam • Restoranda servis",
@@ -670,6 +664,5 @@
 	"info_convenience_value": "Paket servis",
 	"info_convenience_sub": "AVM’lerde kolay erişim",
 	"info_cta_menu": "Menüyü Gör",
-
 	"footer_locations_line": "Maputo Shopping Center • Baía-Mall"
 }

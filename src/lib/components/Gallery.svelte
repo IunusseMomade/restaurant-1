@@ -1,10 +1,10 @@
 <script>
 
-	import section4_1 from '$lib/assets/images/gallery/section4-1.jpeg';
-	import section4_2 from '$lib/assets/images/gallery/section4-2.jpeg';
-	import section4_3 from '$lib/assets/images/gallery/section4-3.jpeg';
-	import section4_4 from '$lib/assets/images/gallery/section4-4.jpeg';
-	import section4_5 from '$lib/assets/images/gallery/section4-5.jpeg';
+	import section4_1 from '$lib/assets/images/gallery/section4-1.jpeg?enhanced';
+	import section4_2 from '$lib/assets/images/gallery/section4-2.jpeg?enhanced';
+	import section4_3 from '$lib/assets/images/gallery/section4-3.jpeg?enhanced';
+	import section4_4 from '$lib/assets/images/gallery/section4-4.jpeg?enhanced';
+	import section4_5 from '$lib/assets/images/gallery/section4-5.jpeg?enhanced';
 	import ImageViewer from '$lib/components/ImageViewer.svelte';
 	import * as m from '$lib/paraglide/messages';
 
@@ -41,7 +41,7 @@
 		return typeof image === 'string' ? image : image?.src ?? image;
 	}
 
-	const viewerImages = galleryImages.map((img) => imageToSrc(img.image));
+	const viewerImages = galleryImages.map((img) => img.image);
 	let isViewerOpen = $state(false);
 	let viewerStartIndex = $state(0);
 

@@ -64,7 +64,7 @@
 		</button>
 	{/if}
 
-	<img 
+	<enhanced:img 
 		src={images[currentIndex]} 
 		alt="Full view" 
 		class="full-image"

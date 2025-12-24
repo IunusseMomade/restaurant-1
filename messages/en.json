@@ -618,14 +618,12 @@
 	"home_overview_bullet_1": "Family-friendly and comfortable atmosphere",
 	"home_overview_bullet_2": "Turkish and Mediterranean options",
 	"home_overview_bullet_3": "Two locations: Maputo Shopping Center & Baía-Mall",
-
 	"gallery_title": "Gallery",
 	"gallery_alt_1": "Gallery 1",
 	"gallery_alt_2": "Gallery 2",
 	"gallery_alt_3": "Gallery 3",
 	"gallery_alt_4": "Gallery 4",
 	"gallery_alt_5": "Gallery 5",
-
 	"home_specials_label": "Chef’s Picks",
 	"home_specials_title_html": "HOUSE <br /> SPECIALTIES",
 	"home_specials_desc": "Explore Istanbul Restaurant favorites in Maputo—Turkish and Mediterranean flavors made for sharing, celebrating, and coming back.",
@@ -633,17 +631,16 @@
 	"home_specials_item_1_desc": "Grilled kebab with spices, served with bread and fresh salad.",
 	"home_specials_item_1_category": "Grills",
 	"home_specials_item_1_price": "From 750 MZN",
-	"home_specials_item_2_name": "MEZZE (SELECTION)",
-	"home_specials_item_2_desc": "A selection of traditional starters to share.",
-	"home_specials_item_2_category": "Starters",
-	"home_specials_item_2_price": "From 490 MZN",
-	"home_specials_item_3_name": "BAKLAVA",
-	"home_specials_item_3_desc": "Layered pastry with nuts and honey—perfect finish to your meal.",
-	"home_specials_item_3_category": "Desserts",
-	"home_specials_item_3_price": "From 220 MZN",
+	"home_specials_item_2_name": "BEYTI SARMA",
+	"home_specials_item_2_desc": "Lavash-wrapped minced meat kebab, topped with yogurt and sauce.",
+	"home_specials_item_2_category": "Specials",
+	"home_specials_item_2_price": "From 1,500 MZN",
+	"home_specials_item_3_name": "KAŞARLI KÖFTE",
+	"home_specials_item_3_desc": "Grilled meatballs stuffed with mozzarella cheese.",
+	"home_specials_item_3_category": "Grills",
+	"home_specials_item_3_price": "From 1,200 MZN",
 	"home_specials_btn_order": "Order now",
 	"home_specials_btn_details": "View details +",
-
 	"promo_badge": "Offer",
 	"promo_tag_city": "Maputo",
 	"promo_tag_discount": "20% OFF",
@@ -651,7 +648,6 @@
 	"promo_title": "Special Offer • Maputo",
 	"promo_desc_html": "20% off selected items between 12:00 and 15:00 (Mon–Fri). Available at <strong>Maputo Shopping Center</strong> and <strong>Baía-Mall</strong>.",
 	"promo_btn_menu": "View Menu",
-
 	"info_hours_label": "Hours",
 	"info_hours_value": "Daily 07:00 - 23:00",
 	"info_hours_sub": "Lunch & Dinner • Dine-in service",
@@ -665,6 +661,5 @@
 	"info_convenience_value": "Takeaway",
 	"info_convenience_sub": "Easy access in shopping centers",
 	"info_cta_menu": "View Menu",
-
 	"footer_locations_line": "Maputo Shopping Center • Baía-Mall"
 }
