@@ -6,6 +6,8 @@
   import person_2 from '$lib/assets/images/about/about-section4-2.jpeg?enhanced';
   import ambient_1 from '$lib/assets/images/about/about-section2-1.jpeg?enhanced';
   import food_1 from '$lib/assets/images/about/about-section2-2.jpeg?enhanced';
+  import about_header from '$lib/assets/images/about-header.jpeg?enhanced';
+
   import HeaderSimple from '$lib/components/HeaderSimple.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
@@ -42,7 +44,7 @@
 	<!-- --- 2. HERO SECTION --- -->
 	<section class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
 		<div class="absolute inset-0">
-			<video
+			<!-- <video
 				autoplay
 				muted
 				loop
@@ -52,11 +54,16 @@
 			>
 				<source src="https://videos.pexels.com/video-files/3196236/3196236-uhd_2560_1440_25fps.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
-			</video>
+			</video> -->
+			<enhanced:img
+			  alt="foto istanbul restaurant dentro"
+			  src={about_header}
+			  class="w-full h-full object-cover"
+			/>
 			<div class="absolute inset-0 bg-black/60"></div>
 		</div>
 		
-		<div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+		<div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto animate-fade-in-up">
 			<div class="w-20 h-[1px] bg-[#C5A059] mx-auto mb-8"></div>
 			<h1 class="font-serif text-5xl md:text-7xl mb-6 leading-tight tracking-tight">
 				{m.about_hero_h1()}
@@ -233,3 +240,26 @@
 
 	<Footer />
 </div>
+
+<style>
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translate3d(0, 40px, 0);
+		}
+		to {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.animate-fade-in-up {
+		animation: fadeInUp 0.8s ease-out forwards;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.animate-fade-in-up {
+			animation: none;
+		}
+	}
+</style>

@@ -1,22 +1,32 @@
 <script>
+	import { fade, slide } from 'svelte/transition';
 	import { Menu, X } from '@lucide/svelte';
 	import * as m from '$lib/paraglide/messages';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import logo from '$lib/assets/ir-logo.png';
 
 	let isMenuOpen = $state(false);
 </script>
 
-<header class="flex w-full flex-col border-b border-gray-200 bg-white">
-	<!-- Main Nav Bar -->
+<header class="relative z-40 flex w-full flex-col border-b border-gray-200 bg-white">
 	<div class="container mx-auto flex items-center justify-between px-6 py-4">
-		<!-- Brand Logo Placeholder -->
-		<div class="flex items-center gap-2">
-			<a href={localizeHref('/')} class="flex items-center gap-2 text-inherit no-underline">
-				<div class="font-serif text-3xl font-bold tracking-wider">ISTANBUL</div>
-				<div class="mx-2 h-8 w-[1px] bg-gray-300"></div>
-				<div class="text-xs leading-tight uppercase tracking-[0.2em] text-gray-500">
-					{m.brand_tagline()}
-				</div>
+		<!-- Brand -->
+		<div class="flex items-center">
+			<a
+				href={localizeHref('/')}
+				class="inline-flex items-center gap-3 text-inherit no-underline"
+				aria-label="Restaurant Istanbul"
+			>
+				<img
+					src={logo}
+					alt="Restaurant Istanbul"
+					class="h-10 w-auto object-contain"
+				/>
+				<span
+					class="hidden sm:block font-serif text-2xl font-semibold tracking-[0.06em] leading-none "
+				>
+					ISTANBUL
+				</span>
 			</a>
 		</div>
 
@@ -28,11 +38,14 @@
 			<a href={localizeHref('/contact')} class="link-hover">{m.nav_contact()}</a>
 
 			<div class="ml-4 flex items-center gap-4">
-				<button
-					class="btn-primary px-6 py-2.5 text-xs"
+				<a
+					href="https://wa.me/258847131300"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn-primary px-6 py-2.5 text-xs inline-block"
 				>
 					{m.nav_order()}
-				</button>
+				</a>
 			</div>
 		</div>
 
@@ -48,7 +61,17 @@
 
 	<!-- Mobile Menu -->
 	{#if isMenuOpen}
-		<div class="border-t border-gray-100 bg-white px-6 py-6 md:hidden">
+		<!-- backdrop -->
+		<div
+			class="fixed inset-0 z-20 bg-black/40 md:hidden"
+			transition:fade={{ duration: 140 }}
+			onclick={() => (isMenuOpen = false)}
+		></div>
+
+		<div
+			class="relative z-30 border-t border-gray-100 bg-white px-6 py-6 md:hidden"
+			transition:slide={{ duration: 180 }}
+		>
 			<nav class="flex flex-col gap-6 text-sm font-medium tracking-wide">
 				<a href={localizeHref('/locations')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_locations()}</a>
 				<a href={localizeHref('/menu')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_menu()}</a>
@@ -56,7 +79,7 @@
 				<a href={localizeHref('/contact')} class="link-hover" onclick={() => (isMenuOpen = false)}>{m.nav_contact()}</a>
 				<div class="h-[1px] w-full bg-gray-100"></div>
 				<div class="flex flex-col gap-4">
-					<button class="btn-primary w-full text-center"> {m.nav_order()} </button>
+					<a href="https://wa.me/258847131300" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center"> {m.nav_order()} </a>
 				</div>
 			</nav>
 		</div>

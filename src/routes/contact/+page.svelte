@@ -28,7 +28,15 @@
 							</div>
 							<div>
 								<h3 class="font-medium text-gray-900">{m.contact_phone_whatsapp()}</h3>
-								<p class="mt-1 text-gray-600">+258 84 713 1300</p>
+								<a
+									href="https://wa.me/258847131300"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Chat on WhatsApp: +258 84 713 1300"
+									class="mt-1 inline-block text-gray-600 transition-colors hover:text-primary"
+								>
+									+258 84 713 1300
+								</a>
 							</div>
 						</div>
 

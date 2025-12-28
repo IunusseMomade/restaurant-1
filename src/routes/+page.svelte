@@ -9,6 +9,7 @@
 	import { page } from '$app/state';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import * as m from '$lib/paraglide/messages';
+	import ogImageAssetUrl from '$lib/assets/og-image.jpeg';
 
 	const seoTitle = m.home_seo_title();
 	const seoDescription = m.home_seo_description();
@@ -70,6 +71,8 @@
 			0
 		)
 	);
+
+	const ogImage = $derived(() => new URL(ogImageAssetUrl, $page.url.origin).toString());
 </script>
 
 <svelte:head>
@@ -84,10 +87,13 @@
 	<meta property="og:url" content={canonical} />
 	<meta property="og:site_name" content="Istanbul Restaurant" />
 	<meta property="og:locale" content="pt_MZ" />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content="Istanbul Restaurant" />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={seoTitle} />
 	<meta name="twitter:description" content={seoDescription} />
+	<meta name="twitter:image" content={ogImage} />
 
 	<script type="application/ld+json">{jsonLd}</script>
 </svelte:head>
