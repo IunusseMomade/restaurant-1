@@ -122,12 +122,14 @@
 		</div>
 	</div>
 
-	<div class="scrollbar-hide container mx-auto overflow-x-auto pb-10 px-6">
+	<div
+		class="scrollbar-hide container mx-auto overflow-x-auto pb-10 px-6 scroll-smooth snap-x snap-mandatory md:snap-none"
+	>
 		<div class="flex min-w-max gap-8">
 			{#each featured as item (item.id)}
 				<a
 					href={item.href}
-					class="group block w-[350px] cursor-pointer border border-transparent bg-white transition-all duration-300 hover:border-gray-100 hover:shadow-xl"
+					class="group block shrink-0 snap-start w-[85vw] sm:w-[350px] cursor-pointer border border-transparent bg-white transition-all duration-300 hover:border-gray-100 hover:shadow-xl"
 					aria-label={item.name()}
 				>
 					<div class="relative h-[220px] overflow-hidden">

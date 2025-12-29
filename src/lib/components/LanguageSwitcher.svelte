@@ -54,12 +54,13 @@
 </script>
 
 <!-- Reduced size, padding, and added opacity for subtlety. Expands opacity on hover. -->
-<div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 bg-white/90 backdrop-blur-sm p-1 rounded-l-md shadow-md border border-r-0 border-gray-200 transition-opacity duration-1000 {isHighlighted ? 'opacity-100' : 'opacity-40 hover:opacity-100'}">
+<!-- Added overflow-hidden to prevent content/focus rings from spilling out and causing scroll -->
+<div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 bg-white/90 backdrop-blur-sm p-1 rounded-l-md shadow-md border border-r-0 border-gray-200 transition-opacity duration-1000 overflow-hidden {isHighlighted ? 'opacity-100' : 'opacity-40 hover:opacity-100'}">
 	{#each locales as locale}
 		<a 
 			href={getTargetHref(locale)}
 			onclick={(e) => switchLocale(e, locale)}
-			class="w-7 h-7 flex items-center justify-center rounded text-[10px] font-bold transition-all duration-200
+			class="w-7 h-7 flex items-center justify-center rounded text-[10px] font-bold transition-all duration-200 outline-none focus:outline-none
 			{currentLocale === locale 
 				? 'bg-[#C5A059] text-white shadow-sm' 
 				: 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'}"

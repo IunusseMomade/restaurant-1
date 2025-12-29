@@ -1,6 +1,7 @@
 <script>
-	import { Instagram, Facebook, Twitter } from '@lucide/svelte';
+	import { Instagram, Facebook, Twitter, Video } from '@lucide/svelte';
 	import * as m from '$lib/paraglide/messages';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 
 <footer class="border-t-[3px] border-primary bg-[#0a0a0a] pt-20 pb-8 text-white">
@@ -33,19 +34,36 @@
 				<div>
 					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_about()}</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_story()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_chefs()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_sourcing()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_careers()}</li>
+						<li>
+							<a href={localizeHref('/locations')} class="cursor-pointer hover:text-primary">{m.nav_locations()}</a>
+						</li>
+						<li>
+							<a href={localizeHref('/menu')} class="cursor-pointer hover:text-primary">{m.nav_menu()}</a>
+						</li>
+						<li>
+							<a href={localizeHref('/about')} class="cursor-pointer hover:text-primary">{m.nav_story()}</a>
+						</li>
+						<li>
+							<a href={localizeHref('/contact')} class="cursor-pointer hover:text-primary">{m.nav_contact()}</a>
+						</li>
 					</ul>
 				</div>
 				<div>
 					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_support()}</h6>
 					<ul class="space-y-1">
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_contact()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_faqs()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_sitemap()}</li>
-						<li class="cursor-pointer hover:text-primary">{m.footer_link_gift()}</li>
+						<li>
+							<a
+								href="https://wa.me/258847131300"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cursor-pointer hover:text-primary"
+							>
+								{m.nav_order()}
+							</a>
+						</li>
+						<li>
+							<a href={localizeHref('/contact')} class="cursor-pointer hover:text-primary">{m.nav_contact()}</a>
+						</li>
 					</ul>
 				</div>
 				<div>
@@ -58,10 +76,36 @@
 				</div>
 				<div>
 					<h6 class="mb-4 text-[10px] font-bold uppercase tracking-wider text-white">{m.footer_col_social()}</h6>
-					<div class="mt-2 flex gap-4">
-						<Instagram size={18} class="cursor-pointer hover:text-brand-cyan" />
-						<Facebook size={18} class="cursor-pointer hover:text-brand-cyan" />
-						<Twitter size={18} class="cursor-pointer hover:text-brand-cyan" />
+					<div class="mt-2 flex flex-wrap gap-2">
+						<a
+							href="https://www.facebook.com/restaurant.ist"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center gap-2 rounded-full border border-gray-700 px-3 py-1.5 transition-all hover:border-primary hover:bg-primary/5"
+						>
+							<Facebook size={16} class="text-gray-400 group-hover:text-primary" />
+							<span class="text-xs font-medium text-gray-400 group-hover:text-primary whitespace-nowrap">{m.contact_social_facebook()}</span>
+						</a>
+
+						<a
+							href="https://www.instagram.com/restaurantistambul"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center gap-2 rounded-full border border-gray-700 px-3 py-1.5 transition-all hover:border-primary hover:bg-primary/5"
+						>
+							<Instagram size={16} class="text-gray-400 group-hover:text-primary" />
+							<span class="text-xs font-medium text-gray-400 group-hover:text-primary whitespace-nowrap">{m.contact_social_instagram()}</span>
+						</a>
+
+						<a
+							href="https://tiktok.com/@restaurantistambul"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center gap-2 rounded-full border border-gray-700 px-3 py-1.5 transition-all hover:border-primary hover:bg-primary/5"
+						>
+							<Video size={16} class="text-gray-400 group-hover:text-primary" />
+							<span class="text-xs font-medium text-gray-400 group-hover:text-primary whitespace-nowrap">{m.contact_social_tiktok()}</span>
+						</a>
 					</div>
 				</div>
 			</div>

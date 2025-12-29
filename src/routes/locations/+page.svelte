@@ -7,7 +7,7 @@
 	import * as m from '$lib/paraglide/messages';
 </script>
 
-<HeaderSimple />
+<HeaderSimple forceSolid />
 
 <div class="min-h-[60vh] bg-white py-20">
 	<div class="container mx-auto px-6">

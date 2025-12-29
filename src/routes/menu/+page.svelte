@@ -105,6 +105,10 @@
 	import prato_familiar_mariscos from '$lib/assets/images/menu/prato-familiar-mariscos.jpeg?enhanced';
 	import schnitzel from '$lib/assets/images/menu/schnitzel.jpeg?enhanced';
 
+
+	//header
+	import menu_header from '$lib/assets/images/menu-header-2.jpeg?enhanced';
+
 	
 	
 	
@@ -463,10 +467,10 @@
 	 <HeaderSimple/>
 
 	<!-- --- 2. HERO SECTION --- -->
-	<section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+	<section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden pt-24 md:pt-0">
 		<div class="absolute inset-0">
-			<img 
-				src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=2000" 
+			<enhanced:img 
+				src={menu_header}
 				alt="Steak grilling" 
 				class="w-full h-full object-cover"
 			/>

@@ -11,7 +11,7 @@
 
 	// make the transparent gray image overlay work
 	import overlayImage from '$lib/assets/images/transparent.png';
-	import logo from '$lib/assets/ir-logo.png';
+	import logo from '$lib/assets/ir-logo.png?enhanced';
 
 	const navSolid = $derived(isScrolled || isMenuOpen);
 	const navLinkClass = $derived(
@@ -56,7 +56,7 @@
 						class="inline-flex items-center gap-3 text-inherit no-underline"
 						aria-label="Restaurant Istanbul"
 					>
-						<img src={logo} alt="Restaurant Istanbul" class="h-10 w-auto object-contain" />
+						<enhanced:img src={logo} alt="Restaurant Istanbul" class="h-10 w-auto object-contain" />
 						<span class="hidden sm:block font-serif text-2xl font-semibold tracking-[0.06em] leading-none ">
 							ISTANBUL
 						</span>
@@ -85,7 +85,10 @@
 
 				<!-- Mobile Menu Toggle -->
 				<button
+					type="button"
 					class={`md:hidden ${navSolid ? 'text-gray-900' : 'text-white'}`}
+					aria-label="Toggle navigation menu"
+					aria-expanded={isMenuOpen}
 					onclick={() => (isMenuOpen = !isMenuOpen)}
 				>
 					{#if isMenuOpen}
