@@ -78,20 +78,33 @@
 					</div>
 				</div>
 
-				<!-- Mobile Menu Toggle -->
-				<button
-					type="button"
-					class={`md:hidden ${navSolid ? 'text-gray-900' : 'text-white'}`}
-					aria-label="Toggle navigation menu"
-					aria-expanded={isMenuOpen}
-					onclick={() => (isMenuOpen = !isMenuOpen)}
-				>
-					{#if isMenuOpen}
-						<X size={24} />
-					{:else}
-						<Menu size={24} />
-					{/if}
-				</button>
+				<!-- Mobile Actions -->
+				<div class="flex items-center gap-4 md:hidden">
+					<a
+						href="https://wa.me/258847131300"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn-primary px-4 py-2 text-xs shadow-sm"
+						aria-label="Order via WhatsApp"
+					>
+						{m.nav_order()}
+					</a>
+
+					<!-- Mobile Menu Toggle -->
+					<button
+						type="button"
+						class={navSolid ? 'text-gray-900' : 'text-white'}
+						aria-label="Toggle navigation menu"
+						aria-expanded={isMenuOpen}
+						onclick={() => (isMenuOpen = !isMenuOpen)}
+					>
+						{#if isMenuOpen}
+							<X size={24} />
+						{:else}
+							<Menu size={24} />
+						{/if}
+					</button>
+				</div>
 			</div>
 		</div>
 

@@ -12,10 +12,10 @@
 	<link rel="icon" type="image/png" href={favicon} />
 </svelte:head>
 
-<div class="overflow-x-hidden min-h-screen">
+<!-- <div class="overflow-x-hidden min-h-screen"> -->
 	<LanguageSwitcher />
 
 	{#key page.url.pathname}
 		{@render children()}
 	{/key}
-</div>
+<!-- </div> -->
